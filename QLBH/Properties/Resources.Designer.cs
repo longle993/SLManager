@@ -93,6 +93,16 @@ namespace QLBH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus_solid {
+            get {
+                object obj = ResourceManager.GetObject("minus-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pen_to_square_solid {
             get {
                 object obj = ResourceManager.GetObject("pen-to-square-solid", resourceCulture);

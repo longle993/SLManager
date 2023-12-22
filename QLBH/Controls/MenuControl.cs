@@ -32,6 +32,7 @@ namespace QLBH.Controls
             picImgFood.Image = Image.FromFile(currentFood.ImagePath);
             lblFoodname.Text = currentFood.Name;
             lblPrice.Text = currentFood.Price.ToString("N0") + " vnd";
+            btnAdd.Tag = currentFood.Id;
         }
 
         private void panelMenuLayout_Paint(object sender, PaintEventArgs e)
