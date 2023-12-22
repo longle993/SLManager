@@ -233,6 +233,7 @@
             Controls.Add(label1);
             Controls.Add(panelAddFood);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormEditFood";
             StartPosition = FormStartPosition.CenterScreen;

@@ -54,7 +54,7 @@
             panelFoodLayout.Dock = DockStyle.Fill;
             panelFoodLayout.Location = new Point(0, 0);
             panelFoodLayout.Name = "panelFoodLayout";
-            panelFoodLayout.Size = new Size(762, 149);
+            panelFoodLayout.Size = new Size(723, 149);
             panelFoodLayout.TabIndex = 0;
             panelFoodLayout.Paint += panelFoodLayout_Paint;
             // 
@@ -65,7 +65,7 @@
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Image = Properties.Resources.pen_to_square_solid;
-            btnEdit.Location = new Point(698, 18);
+            btnEdit.Location = new Point(668, 18);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(49, 45);
             btnEdit.TabIndex = 8;
@@ -153,7 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelFoodLayout);
             Name = "FoodControl";
-            Size = new Size(762, 149);
+            Size = new Size(723, 149);
             panelFoodLayout.ResumeLayout(false);
             panelFoodLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picFood).EndInit();

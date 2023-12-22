@@ -204,6 +204,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panelAddFood);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormAddFood";
             StartPosition = FormStartPosition.CenterScreen;

@@ -92,6 +92,7 @@
             ClientSize = new Size(776, 564);
             Controls.Add(flowListFood);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormFoodManage";

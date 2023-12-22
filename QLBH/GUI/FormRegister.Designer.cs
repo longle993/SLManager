@@ -226,9 +226,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "FormRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormRegister";
+            Load += FormRegister_Load;
             ResumeLayout(false);
             PerformLayout();
         }

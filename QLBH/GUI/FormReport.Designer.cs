@@ -47,6 +47,7 @@
             BackColor = Color.FromArgb(240, 236, 229);
             ClientSize = new Size(776, 564);
             Controls.Add(label1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormReport";
             Text = "FormReport";

@@ -94,5 +94,10 @@ namespace QLBH
             string id = now.ToString("yyyyMMddHHmmssfff");
             return id;
         }
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

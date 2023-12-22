@@ -59,7 +59,7 @@ namespace QLBH.Controls
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Food senderFood = new Food(foodid, foodname,foodtype,foodprice,filePath);
+            Food senderFood = new Food(foodid, foodname, foodtype, foodprice, filePath);
             FormEditFood editFood = new FormEditFood(senderFood);
             editFood.ShowDialog();
             updateFood();
@@ -77,5 +77,6 @@ namespace QLBH.Controls
                 picFood.Image = Image.FromFile(updateFood.ImagePath);
             }
         }
+
     }
 }

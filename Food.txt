@@ -3,3 +3,13 @@ name: Mì quảng
 type: Mì
 price: 20000
 image: D:\Long Le\QLBH\QLBH\Pictures\miquang.jpg
+id: 20231222135603002
+name: Cơm sườn
+type: Cơm
+price: 30000
+image: D:\Long Le\QLBH\QLBH\Pictures\tải xuống.jpg
+id: 20231222135623598
+name: Hủ tíu
+type: Mì
+price: 35000
+image: D:\Long Le\QLBH\QLBH\Pictures\hutiu.jpg

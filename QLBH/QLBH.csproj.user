@@ -4,6 +4,9 @@
     <Compile Update="Controls\FoodControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\MenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="GUI\FormAddFood.cs">
       <SubType>Form</SubType>
     </Compile>
