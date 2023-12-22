@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Controls\FoodControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\FormAddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormEditFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormFoodManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
