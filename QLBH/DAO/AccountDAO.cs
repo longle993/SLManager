@@ -26,11 +26,11 @@ namespace QLBH.DAO
             {
                 using (StreamWriter writer = new StreamWriter(filePath,true))
                 {
-                    writer.WriteLine($"id: {account.Id}");
-                    writer.WriteLine($"name: {account.Name}");
-                    writer.WriteLine($"phone: {account.Phone}");
-                    writer.WriteLine($"birth: {account.Birth.ToString("dd/MM/yyyy")}");
-                    writer.WriteLine($"password: {account.Password}");
+                    writer.WriteLine($"{AccountTable.ACCOUNT_ID}: {account.Id}");
+                    writer.WriteLine($"{AccountTable.ACCOUNT_NAME}: {account.Name}");
+                    writer.WriteLine($"{AccountTable.ACCOUNT_PHONE}: {account.Phone}");
+                    writer.WriteLine($"{AccountTable.ACCOUNT_BIRTH}: {account.Birth.ToString("dd/MM/yyyy")}");
+                    writer.WriteLine($"{AccountTable.ACCOUNT_PASSWORD}: {account.Password}");
 
                     writer.Close();
                 }

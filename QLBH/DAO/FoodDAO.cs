@@ -14,7 +14,6 @@ namespace QLBH.DAO
     {
         private static FoodDAO instance;
         string filePath = @"D:\Long Le\QLBH\Food.txt";
-        string destinationFolder = @"D:\Long Le\QLBH\Pictures";
 
 
         public static FoodDAO Instance
@@ -28,11 +27,11 @@ namespace QLBH.DAO
             {
                 using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
-                    writer.WriteLine($"id: {food.Id}");
-                    writer.WriteLine($"name: {food.Name}");
-                    writer.WriteLine($"type: {food.Type}");
-                    writer.WriteLine($"price: {food.Price}");
-                    writer.WriteLine($"image: {food.ImagePath}");
+                    writer.WriteLine($"{FoodTable.FOOD_ID}: {food.Id}");
+                    writer.WriteLine($"{FoodTable.FOOD_NAME}: {food.Name}");
+                    writer.WriteLine($"{FoodTable.FOOD_TYPE}: {food.Type}");
+                    writer.WriteLine($"{FoodTable.FOOD_PRICE}: {food.Price}");
+                    writer.WriteLine($"{FoodTable.FOOD_IMAGE}: {food.ImagePath}");
                     File.Copy(imagePath, food.ImagePath, true);
 
                     writer.Close();
@@ -56,14 +55,14 @@ namespace QLBH.DAO
                     {
                         if (lines[i].StartsWith($"id: {updatedFood.Id}"))
                         {
-                            writer.WriteLine($"id: {updatedFood.Id}");
-                            writer.WriteLine($"name: {updatedFood.Name}");
-                            writer.WriteLine($"type: {updatedFood.Type}");
-                            writer.WriteLine($"price: {updatedFood.Price}");
+                            writer.WriteLine($"{FoodTable.FOOD_ID}: {updatedFood.Id}");
+                            writer.WriteLine($"{FoodTable.FOOD_NAME}: {updatedFood.Name}");
+                            writer.WriteLine($"{FoodTable.FOOD_TYPE}: {updatedFood.Type}");
+                            writer.WriteLine($"{FoodTable.FOOD_PRICE}: {updatedFood.Price}");
 
                             if (isSetImg)
                             {
-                                writer.WriteLine($"image: {updatedFood.ImagePath}");
+                                writer.WriteLine($"{FoodTable.FOOD_IMAGE}: {updatedFood.ImagePath}");
                                 File.Copy(imagePath, updatedFood.ImagePath, true);
                             }
                             else
