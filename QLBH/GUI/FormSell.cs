@@ -55,7 +55,7 @@ namespace QLBH.GUI
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "")
+            if (string.IsNullOrEmpty(txtSearch.Text))
             {
                 loadFood(); return;
             }

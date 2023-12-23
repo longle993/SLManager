@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnDetail = new Button();
+            txtmaHD = new TextBox();
+            cbboxFilter = new ComboBox();
+            txtSearch = new TextBox();
             label1 = new Label();
             panel2 = new Panel();
             dataBill = new DataGridView();
@@ -47,12 +51,69 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnDetail);
+            panel1.Controls.Add(txtmaHD);
+            panel1.Controls.Add(cbboxFilter);
+            panel1.Controls.Add(txtSearch);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 130);
             panel1.TabIndex = 2;
+            // 
+            // btnDetail
+            // 
+            btnDetail.BackColor = Color.FromArgb(49, 48, 77);
+            btnDetail.Cursor = Cursors.Hand;
+            btnDetail.FlatAppearance.BorderColor = Color.FromArgb(22, 26, 48);
+            btnDetail.FlatAppearance.BorderSize = 2;
+            btnDetail.FlatStyle = FlatStyle.Flat;
+            btnDetail.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDetail.ForeColor = Color.White;
+            btnDetail.Location = new Point(613, 80);
+            btnDetail.Name = "btnDetail";
+            btnDetail.Size = new Size(131, 39);
+            btnDetail.TabIndex = 1000;
+            btnDetail.Text = "Xem chi tiết";
+            btnDetail.UseVisualStyleBackColor = false;
+            btnDetail.Click += btnDetail_Click;
+            // 
+            // txtmaHD
+            // 
+            txtmaHD.BackColor = Color.White;
+            txtmaHD.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtmaHD.ForeColor = Color.FromArgb(22, 26, 48);
+            txtmaHD.Location = new Point(378, 85);
+            txtmaHD.Name = "txtmaHD";
+            txtmaHD.PlaceholderText = "Mã hoá đơn";
+            txtmaHD.ReadOnly = true;
+            txtmaHD.Size = new Size(219, 30);
+            txtmaHD.TabIndex = 6;
+            // 
+            // cbboxFilter
+            // 
+            cbboxFilter.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbboxFilter.ForeColor = Color.FromArgb(22, 26, 48);
+            cbboxFilter.FormattingEnabled = true;
+            cbboxFilter.Items.AddRange(new object[] { "Hôm nay", "Trong tháng", "Trong năm", "Tất cả" });
+            cbboxFilter.Location = new Point(243, 84);
+            cbboxFilter.Name = "cbboxFilter";
+            cbboxFilter.Size = new Size(114, 31);
+            cbboxFilter.TabIndex = 5;
+            cbboxFilter.Text = "Tất cả";
+            cbboxFilter.SelectedIndexChanged += cbboxFilter_SelectedIndexChanged;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSearch.ForeColor = Color.FromArgb(22, 26, 48);
+            txtSearch.Location = new Point(12, 84);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Tìm kiếm...";
+            txtSearch.Size = new Size(225, 30);
+            txtSearch.TabIndex = 4;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // label1
             // 
@@ -117,6 +178,7 @@
             dataBill.RowTemplate.Height = 29;
             dataBill.Size = new Size(776, 434);
             dataBill.TabIndex = 0;
+            dataBill.CellContentClick += dataBill_CellContentClick;
             // 
             // mahd
             // 
@@ -184,5 +246,9 @@
         private DataGridViewTextBoxColumn tamtinh;
         private DataGridViewTextBoxColumn chietkhau;
         private DataGridViewTextBoxColumn total;
+        private ComboBox cbboxFilter;
+        private TextBox txtSearch;
+        private TextBox txtmaHD;
+        private Button btnDetail;
     }
 }

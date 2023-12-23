@@ -28,3 +28,4 @@ D:\Long Le\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.GUI.FormEditFood.resources
 D:\Long Le\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.sourcelink.json
 D:\Long Le\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.Controls.MenuControl.resources
 D:\Long Le\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.Controls.FoodAdded.resources
+D:\Long Le\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.GUI.FormInvoiceDetail.resources

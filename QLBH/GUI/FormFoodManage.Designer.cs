@@ -30,6 +30,11 @@
         {
             label1 = new Label();
             panel1 = new Panel();
+            label3 = new Label();
+            cbboxFilter = new ComboBox();
+            label2 = new Label();
+            cbboxSearchBy = new ComboBox();
+            txtSearch = new TextBox();
             btnAddFood = new Button();
             flowListFood = new FlowLayoutPanel();
             panel1.SuspendLayout();
@@ -48,6 +53,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(cbboxFilter);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(cbboxSearchBy);
+            panel1.Controls.Add(txtSearch);
             panel1.Controls.Add(btnAddFood);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -55,6 +65,64 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 130);
             panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(22, 26, 48);
+            label3.Location = new Point(604, 76);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 23);
+            label3.TabIndex = 9;
+            label3.Text = "Lọc:";
+            // 
+            // cbboxFilter
+            // 
+            cbboxFilter.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbboxFilter.ForeColor = Color.FromArgb(22, 26, 48);
+            cbboxFilter.FormattingEnabled = true;
+            cbboxFilter.Location = new Point(650, 73);
+            cbboxFilter.Name = "cbboxFilter";
+            cbboxFilter.Size = new Size(114, 31);
+            cbboxFilter.TabIndex = 8;
+            cbboxFilter.Text = "Tất cả";
+            cbboxFilter.SelectedIndexChanged += cbboxFilter_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(22, 26, 48);
+            label2.Location = new Point(320, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(124, 23);
+            label2.TabIndex = 7;
+            label2.Text = "Tìm kiếm theo:";
+            // 
+            // cbboxSearchBy
+            // 
+            cbboxSearchBy.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbboxSearchBy.ForeColor = Color.FromArgb(22, 26, 48);
+            cbboxSearchBy.FormattingEnabled = true;
+            cbboxSearchBy.Items.AddRange(new object[] { "Tên", "Loại" });
+            cbboxSearchBy.Location = new Point(450, 73);
+            cbboxSearchBy.Name = "cbboxSearchBy";
+            cbboxSearchBy.Size = new Size(114, 31);
+            cbboxSearchBy.TabIndex = 6;
+            cbboxSearchBy.Text = "Tên";
+            cbboxSearchBy.SelectedIndexChanged += cbboxFilter_SelectedIndexChanged;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSearch.ForeColor = Color.FromArgb(22, 26, 48);
+            txtSearch.Location = new Point(12, 73);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Tìm kiếm...";
+            txtSearch.Size = new Size(286, 30);
+            txtSearch.TabIndex = 3;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // btnAddFood
             // 
@@ -109,5 +177,10 @@
         private Panel panel1;
         private FlowLayoutPanel flowListFood;
         private Button btnAddFood;
+        private TextBox txtSearch;
+        private ComboBox cbboxSearchBy;
+        private Label label2;
+        private Label label3;
+        private ComboBox cbboxFilter;
     }
 }

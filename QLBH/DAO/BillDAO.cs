@@ -1,6 +1,7 @@
 ﻿using QLBH.DTO;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,12 @@ namespace QLBH.DAO
 
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split(':');
-                        if (parts.Length == 2)
+                        int index = line.IndexOf(':');
+
+                        if (index > 0)
                         {
-                            string key = parts[0].Trim();
-                            string value = parts[1].Trim();
+                            string key = line.Substring(0, index).Trim();
+                            string value = line.Substring(index + 1).Trim();
 
                             if (key == "id")
                             {
@@ -50,12 +52,13 @@ namespace QLBH.DAO
                                 switch (key)
                                 {
                                     case "date":
-                                        bill.Date = DateTime.Parse(value);
+                                        bill.Date = DateTime.ParseExact(value, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
                                         break;
                                     case "foodlist":
-                                        while ((line = reader.ReadLine()) != null && !string.IsNullOrEmpty(line))
+                                        string[] foodIDs = value.Split(',');
+                                        foreach (string foodID in foodIDs)
                                         {
-                                            bill.FoodList.Add(line.Trim());
+                                            bill.FoodList.Add(foodID.Trim());
                                         }
                                         break;
                                     case "price":
@@ -74,7 +77,7 @@ namespace QLBH.DAO
 
                     if (bill != null)
                     {
-                        list.Add(bill); 
+                        list.Add(bill);
                     }
                 }
 
@@ -101,6 +104,9 @@ namespace QLBH.DAO
             return request;
         }
 
+
+
+
         public bool createBill(Bill bill)
         {
             try
@@ -108,8 +114,19 @@ namespace QLBH.DAO
                 using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
                     writer.WriteLine($"{BillTable.BILL_ID}: {bill.Id}");
-                    writer.WriteLine($"{BillTable.BILL_DATE}: {bill.Date.ToString()}");
-                    writer.WriteLine($"{BillTable.BILL_FOODLIST}:");
+                    writer.WriteLine($"{BillTable.BILL_DATE}: {bill.Date}");
+                    writer.Write($"{BillTable.BILL_FOODLIST}: ");
+                    for(int i = 0; i<bill.FoodList.Count; i++)
+                    {
+                        if(i == bill.FoodList.Count - 1)
+                        {
+                            writer.WriteLine($"{bill.FoodList[i]}");
+                        }
+                        else
+                        {
+                            writer.Write($"{bill.FoodList[i]}, ");
+                        }
+                    }
                     bill.FoodList.ForEach(item =>
                     {
                         writer.WriteLine($"{item}");
@@ -123,15 +140,6 @@ namespace QLBH.DAO
             }
             catch { return false; }
             
-        }
-        private string GetValueFromLine(string line)
-        {
-            int index = line.IndexOf(':');
-            if (index >= 0 && index + 1 < line.Length)
-            {
-                return line.Substring(index + 1).Trim();
-            }
-            return string.Empty;
         }
     }
 }
