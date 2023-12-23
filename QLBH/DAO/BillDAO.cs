@@ -21,39 +21,63 @@ namespace QLBH.DAO
         {
             Request request = new Request();
             List<Bill> list = new List<Bill>();
+
             try
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
+                    Bill bill = null;
                     string line;
+
                     while ((line = reader.ReadLine()) != null)
                     {
-                        Bill bill = new Bill();
                         string[] parts = line.Split(':');
-                        if(parts.Length == 2 )
+                        if (parts.Length == 2)
                         {
                             string key = parts[0].Trim();
                             string value = parts[1].Trim();
 
-                            switch(key)
+                            if (key == "id")
                             {
-                                case "id": bill.Id = value; break;
-                                case "date": bill.Date = Convert.ToDateTime(value); break;
-                                case "price": bill.Price = Convert.ToDecimal(value); break;
-                                case "discount": bill.Discount = Convert.ToDecimal(value); break;
-                                case "total": bill.Total = Convert.ToDecimal(value); break;
-                                case "foodlist":
-                                    
-                                    while((line = reader.ReadLine()) != null && !string.IsNullOrEmpty(line))
-                                        bill.FoodList.Add(line);    
-                                    break;
+                                if (bill != null)
+                                {
+                                    list.Add(bill);
+                                }
+                                bill = new Bill { Id = value };
+                            }
+                            else if (bill != null)
+                            {
+                                switch (key)
+                                {
+                                    case "date":
+                                        bill.Date = DateTime.Parse(value);
+                                        break;
+                                    case "foodlist":
+                                        while ((line = reader.ReadLine()) != null && !string.IsNullOrEmpty(line))
+                                        {
+                                            bill.FoodList.Add(line.Trim());
+                                        }
+                                        break;
+                                    case "price":
+                                        bill.Price = decimal.Parse(value);
+                                        break;
+                                    case "discount":
+                                        bill.Discount = decimal.Parse(value);
+                                        break;
+                                    case "total":
+                                        bill.Total = decimal.Parse(value);
+                                        break;
+                                }
                             }
                         }
-                        list.Add(bill);
                     }
-                    reader.Close();
+
+                    if (bill != null)
+                    {
+                        list.Add(bill); 
+                    }
                 }
-                
+
                 if (list.Count > 0)
                 {
                     request.IsSuccess = true;
@@ -73,8 +97,10 @@ namespace QLBH.DAO
                 request.Message = ex.Message;
                 request.Data = null;
             }
+
             return request;
         }
+
         public bool createBill(Bill bill)
         {
             try
