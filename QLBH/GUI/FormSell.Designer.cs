@@ -167,6 +167,7 @@
             btnReset.TabIndex = 1017;
             btnReset.Text = "Đặt lại";
             btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // btnPay
             // 
@@ -183,6 +184,7 @@
             btnPay.TabIndex = 1016;
             btnPay.Text = "Thanh toán";
             btnPay.UseVisualStyleBackColor = false;
+            btnPay.Click += btnPay_Click;
             // 
             // lblMaHD
             // 

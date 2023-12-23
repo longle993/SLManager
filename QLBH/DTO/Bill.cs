@@ -10,7 +10,7 @@ namespace QLBH.DTO
     {
         string id;
         DateTime date;
-        List<string> foodList;
+        List<string> foodList = new List<string>();
         decimal price;
         decimal discount;
         decimal total;

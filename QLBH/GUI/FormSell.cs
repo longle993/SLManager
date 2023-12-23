@@ -112,7 +112,7 @@ namespace QLBH.GUI
                     MessageBox.Show("Số tiền chiết khấu không thể lớn hơn tổng tiền tạm tính!");
                 }
             }
-            
+
         }
 
         private void flowListMenu_Paint(object sender, PaintEventArgs e)
@@ -137,6 +137,51 @@ namespace QLBH.GUI
             DateTime now = DateTime.Now;
             string id = now.ToString("yyyyMMddHHmmssfff");
             return id;
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDecimal(txtTotal.Text) > 0)
+            {
+                Bill bill = new Bill();
+                bill.Id = lblMaHD.Text;
+                bill.Date = DateTime.Now;
+                bill.Discount = Convert.ToDecimal(txtDiscount.Text);
+                bill.Price = Convert.ToDecimal(txtTamTinh.Text);
+                bill.Total = Convert.ToDecimal(txtTotal.Text);
+                foreach (Control item in flowTotal.Controls)
+                {
+                    FoodAdded control = (FoodAdded)item;
+                    bill.FoodList.Add(control.CurrentFood.Id);
+                }
+                if (BillBUS.Instance.createBill(bill))
+                {
+                    MessageBox.Show("Thanh toán thành công!");
+                    Reset();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có hoá đơn cần tính toán!");
+            }
+        }
+        private void Reset()
+        {
+            flowTotal.Controls.Clear();
+            lblMaHD.Text = GenerateID();
+            txtDiscount.Text = "0";
+            txtTamTinh.Text = "0";
+            txtTotal.Text = "0";
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
