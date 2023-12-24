@@ -98,7 +98,7 @@ namespace QLBH.GUI
             {
                 this.imagePath = openFileDialog.FileName;
 
-                string destinationFolder = @"D:\Long Le\QLBH\QLBH\Pictures";
+                string destinationFolder = ConnectionString.ConnectToPicture();
                 this.destinationPath = Path.Combine(destinationFolder, Path.GetFileName(imagePath));
 
                 if (!Directory.Exists(destinationFolder))

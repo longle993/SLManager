@@ -11,7 +11,8 @@ namespace QLBH.DAO
     public class BillDAO
     {
         private static BillDAO instance;
-        string filePath = @"D:\Long Le\QLBH\Bill.txt";
+        string filePath = ConnectionString.ConnectToFile("Bill.txt");
+
 
         public static BillDAO Instance
         {

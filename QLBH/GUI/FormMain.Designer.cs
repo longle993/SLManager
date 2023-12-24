@@ -31,8 +31,6 @@
             panel1 = new Panel();
             panel4 = new Panel();
             btnLogout = new Button();
-            btnSetting = new Button();
-            btnBaoCao = new Button();
             btnHoaDon = new Button();
             btnFood = new Button();
             btnBanHang = new Button();
@@ -63,8 +61,6 @@
             // panel4
             // 
             panel4.Controls.Add(btnLogout);
-            panel4.Controls.Add(btnSetting);
-            panel4.Controls.Add(btnBaoCao);
             panel4.Controls.Add(btnHoaDon);
             panel4.Controls.Add(btnFood);
             panel4.Controls.Add(btnBanHang);
@@ -76,14 +72,14 @@
             // 
             // btnLogout
             // 
-            btnLogout.Dock = DockStyle.Top;
+            btnLogout.Dock = DockStyle.Bottom;
             btnLogout.FlatAppearance.BorderColor = Color.FromArgb(49, 48, 77);
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.FromArgb(182, 187, 196);
             btnLogout.Image = Properties.Resources.right_from_bracket_solid;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(0, 365);
+            btnLogout.Location = new Point(0, 366);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(10, 0, 10, 0);
             btnLogout.Size = new Size(250, 73);
@@ -93,46 +89,6 @@
             btnLogout.Click += btnLogout_Click;
             btnLogout.MouseEnter += btnBanHang_MouseEnter;
             btnLogout.MouseLeave += btnBanHang_MouseLeave;
-            // 
-            // btnSetting
-            // 
-            btnSetting.Dock = DockStyle.Top;
-            btnSetting.FlatAppearance.BorderColor = Color.FromArgb(49, 48, 77);
-            btnSetting.FlatStyle = FlatStyle.Flat;
-            btnSetting.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSetting.ForeColor = Color.FromArgb(182, 187, 196);
-            btnSetting.Image = Properties.Resources.settings;
-            btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSetting.Location = new Point(0, 292);
-            btnSetting.Name = "btnSetting";
-            btnSetting.Padding = new Padding(10, 0, 10, 0);
-            btnSetting.Size = new Size(250, 73);
-            btnSetting.TabIndex = 4;
-            btnSetting.Text = "Cài đặt";
-            btnSetting.UseVisualStyleBackColor = true;
-            btnSetting.Click += btnSetting_Click;
-            btnSetting.MouseEnter += btnBanHang_MouseEnter;
-            btnSetting.MouseLeave += btnBanHang_MouseLeave;
-            // 
-            // btnBaoCao
-            // 
-            btnBaoCao.Dock = DockStyle.Top;
-            btnBaoCao.FlatAppearance.BorderColor = Color.FromArgb(49, 48, 77);
-            btnBaoCao.FlatStyle = FlatStyle.Flat;
-            btnBaoCao.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBaoCao.ForeColor = Color.FromArgb(182, 187, 196);
-            btnBaoCao.Image = Properties.Resources.bar_chart;
-            btnBaoCao.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBaoCao.Location = new Point(0, 219);
-            btnBaoCao.Name = "btnBaoCao";
-            btnBaoCao.Padding = new Padding(10, 0, 10, 0);
-            btnBaoCao.Size = new Size(250, 73);
-            btnBaoCao.TabIndex = 3;
-            btnBaoCao.Text = "Báo cáo";
-            btnBaoCao.UseVisualStyleBackColor = true;
-            btnBaoCao.Click += btnBaoCao_Click;
-            btnBaoCao.MouseEnter += btnBanHang_MouseEnter;
-            btnBaoCao.MouseLeave += btnBanHang_MouseLeave;
             // 
             // btnHoaDon
             // 
@@ -292,7 +248,5 @@
         private Button btnHoaDon;
         private Button btnFood;
         private Button btnLogout;
-        private Button btnSetting;
-        private Button btnBaoCao;
     }
 }

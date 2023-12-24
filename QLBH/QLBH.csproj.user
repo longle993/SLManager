@@ -13,6 +13,9 @@
     <Compile Update="GUI\FormAddFood.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\FormConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\FormEditFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,13 +37,7 @@
     <Compile Update="GUI\FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\FormReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="GUI\FormSell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace QLBH.DAO
     public class FoodDAO
     {
         private static FoodDAO instance;
-        string filePath = @"D:\Long Le\QLBH\Food.txt";
+        string filePath = ConnectionString.ConnectToFile("Food.txt");
 
 
         public static FoodDAO Instance

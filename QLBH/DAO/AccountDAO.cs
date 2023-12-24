@@ -11,7 +11,8 @@ namespace QLBH.DAO
     public class AccountDAO
     {
         private static AccountDAO instance;
-        string filePath = @"D:\Long Le\QLBH\Account.txt";
+        string filePath = ConnectionString.ConnectToFile("Account.txt");
+
 
         public static AccountDAO Instance
         {
